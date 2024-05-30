@@ -1,113 +1,67 @@
 import Image from "next/image";
+import NavBar from "@/components/navBar";
+import EventCard from "@/components/eventCard";
+/* Idea: each event is a module like canvas classes in card view or module view, click on an event and it takes you to an info page*/
+/* Idea: Find events near you */
+/* https://github.com/tailwindlabs/tailwindcss-forms */
+/* events.map(function(event){
+            return( <EventCard eventName="Zach Bryan Concert" />)
+          })*/
 
 export default function Home() {
+  const events = ['Zach Bryan Concert','Japanese Festival at the Botanical Gardens','Earth Day Park Cleanup']
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="wholeWebsite">
+      <NavBar />
+      <div className="websiteBckg bg-fixed bg-[url('/bckg.jpg')]">
+        <div className="centerContent container m-auto">
+          <div className="flex flex-col space-y-4">
+            <div className="h-24 flex mb-2 mt-2 rounded-lg bg-navy">
+              <div className="m-auto">
+                <div className="profileWelcome">
+
+                  <p className="text-left text-3xl font-semibold">Welcome, [User]!</p>
+                </div>
+              </div>
+            </div>
+        <div className="currentEvents h-96 bg-navy rounded-lg p-4">
+          <p className="text-3xl font-semibold">Your Events:</p>
+          <EventCard eventName="Zach Bryan"/>
+          <ul role="list" className="list-disc list-inside text-md font-semibold">
+            <li>Zach Bryan Concert</li>
+            <li>Japanese Festival at the Botanical Gardens</li>
+            <li>Earth Day Park Cleanup</li>
+          </ul>
+          <br/>
+          <p className="text-lg font-semibold">Want to add another event?</p>
+        </div>
+
+        <div className="mapAddEvent h-auto flex bg-navy rounded-lg p-4">
+            <div className="addEvent flex-none w-1/4 bg-white p-4 rounded-lg">
+              <p className="text-center text-2xl font-semibold mb-4">Add Event</p>
+              <div className="actions flex flex-col space-y-4">
+                <p className="dropPin">Drop Pin</p>
+                <p className="jobTitle">Job Title:</p>
+                <input type="text" className="form-input px-4 py-3 rounded-full text-gray-600" placeholder="Enter Job Title" />
+                <p className="assignWorkers">Assign Workers:</p>
+                <input type="text" className="form-input px-4 py-3 rounded-full text-gray-600" placeholder="Enter Workers" />
+                <p className="assignTime">Assign Date and Time:</p>
+                <input type="datetime-local" className="form-input px-4 py-3 rounded-full text-gray-600"></input>
+                <p className="assignTools">Assign Tools:</p>
+                <input type="text" className="form-input px-4 py-3 rounded-full text-gray-600" placeholder="Enter Tools"/>
+                <input type="submit" className=""/>
+                <div className="flex items-center">
+                </div>
+              </div>
+            </div>
+            <div className="map flex-1 w-3/4 h-auto bg-[url('/mapSample.jpeg')] bg-cover bg-center rounded-lg ml-4">
+              {/* Map content here */}
+            </div>
+        </div>
+          </div>
+          <p>&copy; 2024 My Website. All rights reserved.</p>
         </div>
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }
