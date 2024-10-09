@@ -11,7 +11,7 @@ export default function Login() {
             <h1 className="header1 text-4xl text-center font-bold">Login</h1>
             <div className="input-box relative w-full h-12 my-8">
             <input
-                className="w-full h-full bg-transparent border-2 border-white rounded-l-3xl rounded-r-3xl py-3 pr-12 pl-5 text-white placeholder-white placeholder-opacity-50"
+                className="w-full h-full bg-navy bg-opacity-0 border-2 border-white rounded-l-3xl rounded-r-3xl py-3 pr-12 pl-5 text-white placeholder-white placeholder-opacity-50"
                 type="text"
                 placeholder="Username"
                 required
@@ -22,7 +22,7 @@ export default function Login() {
 
             <div className="input-box relative w-full h-12 my-8">
               <input
-                className="w-full h-full bg-transparent h-5 border-2 border-white rounded-l-3xl rounded-r-3xl py-5 pr-12 pl-5 text-white placeholder:text-white"
+                className="w-full h-full bg-navy bg-opacity-0 h-5 border-2 border-white rounded-l-3xl rounded-r-3xl py-5 pr-12 pl-5 text-white placeholder:text-white"
                 type="password"
                 placeholder="Password"
                 required
@@ -31,8 +31,10 @@ export default function Login() {
             </div>
 
             <div className="remember-forgot flex justify-between text-md mx-0 mt-1 mb-1">
-              <input type="checkbox" />
-              <label className="accent-white mr-3 text-md">Remember me</label>
+              <div className="checkRemember align-left">
+              <input type="checkbox"/>
+              <label className="accent-white mr-3 text-md pl-2">Remember me</label>
+              </div>
               <a href="#" className="text-white decoration-0 hover:underline underline-offset-1">Forgot Password?</a>
             </div>
             <a href="index.html">
@@ -43,7 +45,7 @@ export default function Login() {
 
             <div className="register-link text-center mx-0 mt-1 mb-1">
               <p>
-                Don't have an account? <a href="#" className="text-white decoration-0 hover:underline underline-offset-1 font-semibold">Register</a>
+                Don't have an account? <a href="/profile" className="text-white decoration-0 hover:underline underline-offset-1 font-semibold">Register</a>
               </p>
             </div>
           </form>

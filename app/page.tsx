@@ -1,6 +1,7 @@
 import Image from "next/image";
 import NavBar from "@/components/navBar";
 import EventCard from "@/components/eventCard";
+import EmptyField from "@/components/inputs/emptyField";
 /* Idea: each event is a module like canvas classes in card view or module view, click on an event and it takes you to an info page*/
 /* Idea: Find events near you */
 /* https://github.com/tailwindlabs/tailwindcss-forms */
@@ -24,15 +25,18 @@ export default function Home() {
                 </div>
               </div>
             </div>
-        <div className="currentEvents h-96 bg-navy rounded-lg p-4">
+        <div className="currentEvents h-auto bg-navy rounded-lg p-8 content-center">
           <p className="text-3xl font-semibold">Your Events:</p>
-          <EventCard eventName="Zach Bryan"/>
-          <ul role="list" className="list-disc list-inside text-md font-semibold">
-            <li>Zach Bryan Concert</li>
-            <li>Japanese Festival at the Botanical Gardens</li>
-            <li>Earth Day Park Cleanup</li>
-          </ul>
-          <br/>
+          <div className="eventHolder grid grid-cols-3 gap-4 content-center">
+          <EventCard eventName="Zach Bryan Concert"/>
+          <EventCard eventName="Japanese Festival at the Botanical Gardens"/>
+          <EventCard eventName="Earth Day Park Cleanup"/>
+          <EventCard eventName="Scholastic Book Fair"/>
+          <EventCard eventName="Grounds Crew"/>
+          <EventCard eventName="Greek Festival"/>
+          <EventCard eventName="Pool Cleanup"/>
+          <EventCard eventName="Canvassing for Politician"/>
+          </div>
           <p className="text-lg font-semibold">Want to add another event?</p>
         </div>
 
@@ -42,14 +46,14 @@ export default function Home() {
               <div className="actions flex flex-col space-y-4">
                 <p className="dropPin">Drop Pin</p>
                 <p className="jobTitle">Job Title:</p>
-                <input type="text" className="form-input px-4 py-3 rounded-full text-gray-600" placeholder="Enter Job Title" />
+                <EmptyField placeholder="Enter Job Title"/>
                 <p className="assignWorkers">Assign Workers:</p>
-                <input type="text" className="form-input px-4 py-3 rounded-full text-gray-600" placeholder="Enter Workers" />
+                <EmptyField placeholder="Enter Workers"/>
                 <p className="assignTime">Assign Date and Time:</p>
-                <input type="datetime-local" className="form-input px-4 py-3 rounded-full text-gray-600"></input>
+                <input type="datetime-local" className="form-input px-4 py-3 rounded-full text-gray-600 bg-navy"></input>
                 <p className="assignTools">Assign Tools:</p>
-                <input type="text" className="form-input px-4 py-3 rounded-full text-gray-600" placeholder="Enter Tools"/>
-                <input type="submit" className=""/>
+                <EmptyField placeholder="Enter Tools"/>
+                <input type="submit" className="submitButton"/>
                 <div className="flex items-center">
                 </div>
               </div>
