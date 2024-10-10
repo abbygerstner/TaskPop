@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map</title>
+    <!-- Link to Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <!-- Add some custom styles for the map container -->
+    <style>
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click on the Map</h1>
+    <!-- Map container -->
+    <div id="map"></div>
+
+    <!-- Link to Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map and set its view to the user's current location
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var lat = position.coords.latitude;
+                var lng = position.coords.longitude;
+
+                // Create a map and set it to the user's current location
+                var map = L.map('map').setView([lat, lng], 13);
+
+                // Load and display tile layer from OpenStreetMap
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(map);
+
+                // Add a marker at the user's current location
+                var marker = L.marker([lat, lng]).addTo(map)
+                    .bindPopup('You are here!')
+                    .openPopup();
+
+                // When the user clicks on the map, log the coordinates
+                map.on('click', function(e) {
+                    var clickedLat = e.latlng.lat;
+                    var clickedLng = e.latlng.lng;
+                    console.log('Clicked coordinates: Latitude=' + clickedLat + ', Longitude=' + clickedLng);
+                    alert('Drop pin here?');
+                });
+            });
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    </script>
+</body>
+</html>
