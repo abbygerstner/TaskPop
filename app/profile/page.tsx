@@ -1,7 +1,7 @@
 import Image from "next/image";
-import NavBar from "@/components/navBar";
+import NavBar from "@/components/navbar/navBar";
 import UsernameField from "@/components/inputs/usernameField";
-import ProfileIcon from "@/components/ProfileIcon";
+import ProfileIcon from "@/components/navbar/ProfileIcon";
 /* https://tailwindui.com/components/application-ui/forms/form-layouts */
 
 export default function Profile() {

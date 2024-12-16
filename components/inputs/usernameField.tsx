@@ -10,7 +10,7 @@ export default function UsernameField({usernamePrefix, placeholder="janesmith"}:
                     Username
                   </label>
                   <div className="mt-2">
-                    <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-teal ring-teal sm:max-w-md bg-transparent text-gray-500">
+                    <div className="flex rounded-md shadow-sm ring-1 ring-inset focus-within:ring-2 focus-within:ring-inset focus-within:ring-teal ring-teal sm:max-w-md bg-transparent text-gray-500">
                       <span className="flex select-none items-center pl-3 text-gray-500 sm:text-sm">
                         {usernamePrefix}
                       </span>
@@ -19,7 +19,7 @@ export default function UsernameField({usernamePrefix, placeholder="janesmith"}:
                         name="username"
                         id="username"
                         autoComplete="username"
-                        className="block flex-1 border-0 py-1.5 pl-1 text-gray-500 placeholder:text-gray-400 focus:ring-0 ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-teal sm:text-sm sm:leading-6 rounded-md bg-navy ring-teal"
+                        className="block flex-1 border-0 py-1.5 pl-1 text-gray-500 placeholder:text-gray-400 focus:ring-2 ring-1 ring-inset focus-within:ring-2 focus-within:ring-inset focus-within:ring-teal sm:text-sm sm:leading-6 rounded-md bg-navy ring-teal"
                             placeholder = {placeholder}
                       />
                     </div>

@@ -9,7 +9,9 @@ const config: Config = {
   theme: {
     colors: {
       'navy': '#040c1c',
+      'light-navy': '#09193b',
       'teal': '#50effc',
+      'dark-teal': '#3fb6bf',
     },
     extend: {
       backgroundImage: {

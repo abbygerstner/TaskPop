@@ -1,5 +1,5 @@
 import Image from "next/image";
-import NavBar from "@/components/navBar";
+import NavBar from "@/components/navbar/navBar";
 /* https://flowbite.com/docs/components/accordion/ */
 
 export default function About() {
